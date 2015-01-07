@@ -4,23 +4,24 @@ import GUI.SearchInterface.SearchInterfaceBackend;
 
 import java.io.File;
 
+public class ShopFinder
+{
 
-public class ShopFinder {
+    public static void main(String[] args)
+    {
+        try
+        {
+            File folder = new File("temp/");
 
-	public static void main(String[] args) {
-            try {
-                File folder = new File("temp/");
-            
-                if(folder.exists() == false)
-                {
-                    folder.mkdir();
-                }
-            }
-            catch (Exception e)
+            if (folder.exists() == false)
             {
-                e.printStackTrace();
+                folder.mkdir();
             }
-		SearchInterfaceBackend search = new SearchInterfaceBackend();
-		search.getFrame().setVisible(true);
-	}
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        SearchInterfaceBackend search = new SearchInterfaceBackend();
+        search.getFrame().setVisible(true);
+    }
 }

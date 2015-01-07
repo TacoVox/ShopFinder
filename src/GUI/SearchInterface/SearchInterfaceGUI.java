@@ -14,80 +14,84 @@ import javax.swing.JTextField;
 
 import db.*;
 
-public class SearchInterfaceGUI {
-	JFrame searchFrame;
-	JTextField zipCodeInput;
-	JButton loginButton;
-	JButton searchButton;
-	JList<String> categoryList;
-	DefaultListModel<String> categoryModel;
+public class SearchInterfaceGUI
+{
 
-	public SearchInterfaceGUI() {
-		DBConnector connector = new DBConnector();
-		connector.openConnection();
-		Categories category = new Categories(connector.getConnection());
+    JFrame searchFrame;
+    JTextField zipCodeInput;
+    JButton loginButton;
+    JButton searchButton;
+    JList<String> categoryList;
+    DefaultListModel<String> categoryModel;
 
-		searchFrame = new JFrame();
-		searchFrame.setTitle("Shop Finder");
-		searchFrame.setResizable(false);
-		searchFrame.setBounds(100, 100, 595, 461);
-		searchFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		searchFrame.getContentPane().setLayout(null);
+    public SearchInterfaceGUI()
+    {
+        DBConnector connector = new DBConnector();
+        connector.openConnection();
+        Categories category = new Categories(connector.getConnection());
 
-		JLabel zipCodeLabel = new JLabel("Input ZIP code:");
-		zipCodeLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		zipCodeLabel.setBounds(10, 282, 108, 50);
-		searchFrame.getContentPane().add(zipCodeLabel);
+        searchFrame = new JFrame();
+        searchFrame.setTitle("Shop Finder");
+        searchFrame.setResizable(false);
+        searchFrame.setBounds(100, 100, 595, 461);
+        searchFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        searchFrame.getContentPane().setLayout(null);
 
-		zipCodeInput = new JTextField();
-		zipCodeInput.setBounds(117, 292, 200, 27);
-		searchFrame.getContentPane().add(zipCodeInput);
-		zipCodeInput.setColumns(10);
+        JLabel zipCodeLabel = new JLabel("Input ZIP code:");
+        zipCodeLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        zipCodeLabel.setBounds(10, 282, 108, 50);
+        searchFrame.getContentPane().add(zipCodeLabel);
 
-		JLabel categoryLabel = new JLabel("Categories:");
-		categoryLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		categoryLabel.setBounds(10, 332, 91, 19);
-		searchFrame.getContentPane().add(categoryLabel);
+        zipCodeInput = new JTextField();
+        zipCodeInput.setBounds(117, 292, 200, 27);
+        searchFrame.getContentPane().add(zipCodeInput);
+        zipCodeInput.setColumns(10);
 
-		loginButton = new JButton("Login");
-		loginButton.setBounds(426, 292, 89, 23);
+        JLabel categoryLabel = new JLabel("Categories:");
+        categoryLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        categoryLabel.setBounds(10, 332, 91, 19);
+        searchFrame.getContentPane().add(categoryLabel);
 
-		searchFrame.getContentPane().add(loginButton);
+        loginButton = new JButton("Login");
+        loginButton.setBounds(426, 292, 89, 23);
 
-		JInternalFrame backgroundFrame = new JInternalFrame("New JInternalFrame");
-		backgroundFrame.setBorder(null);
-		backgroundFrame.setEnabled(false);
-		backgroundFrame.setBounds(94, 11, 421, 229);
-		searchFrame.getContentPane().add(backgroundFrame);
-		backgroundFrame.setVisible(true);
-		backgroundFrame.setClosable(false);
-		backgroundFrame.setContentPane(new JLabel(new ImageIcon("png/ShopFinderLogo.png")));
-		((javax.swing.plaf.basic.BasicInternalFrameUI) backgroundFrame.getUI()).setNorthPane(null);
+        searchFrame.getContentPane().add(loginButton);
 
-		searchButton = new JButton("Search");
-		searchButton.setBounds(327, 292, 89, 23);
+        JInternalFrame backgroundFrame = new JInternalFrame("New JInternalFrame");
+        backgroundFrame.setBorder(null);
+        backgroundFrame.setEnabled(false);
+        backgroundFrame.setBounds(94, 11, 421, 229);
+        searchFrame.getContentPane().add(backgroundFrame);
+        backgroundFrame.setVisible(true);
+        backgroundFrame.setClosable(false);
+        backgroundFrame.setContentPane(new JLabel(new ImageIcon("png/ShopFinderLogo.png")));
+        ((javax.swing.plaf.basic.BasicInternalFrameUI) backgroundFrame.getUI()).setNorthPane(null);
 
-		searchFrame.getContentPane().add(searchButton);
+        searchButton = new JButton("Search");
+        searchButton.setBounds(327, 292, 89, 23);
 
-		JScrollPane categoryPane = new JScrollPane();
-		categoryPane.setBounds(10, 362, 307, 60);
-		searchFrame.getContentPane().add(categoryPane);		
+        searchFrame.getContentPane().add(searchButton);
 
-		categoryModel = new DefaultListModel<String>();
+        JScrollPane categoryPane = new JScrollPane();
+        categoryPane.setBounds(10, 362, 307, 60);
+        searchFrame.getContentPane().add(categoryPane);
 
-		categoryList = new JList<String>(categoryModel);
-		categoryPane.setViewportView(categoryList);
+        categoryModel = new DefaultListModel<String>();
 
-		for(String[] cat : category.getCategories()){
-			categoryModel.addElement(cat[1]);
-		}
+        categoryList = new JList<String>(categoryModel);
+        categoryPane.setViewportView(categoryList);
 
-		connector.closeConnection();
-	}
-        
-        public JFrame getFrame()
+        for (String[] cat : category.getCategories())
         {
-            return searchFrame;
+            categoryModel.addElement(cat[1]);
         }
+
+        connector.closeConnection();
+    }
+
+    public JFrame getFrame()
+    {
+        return searchFrame;
+    }
 
 }

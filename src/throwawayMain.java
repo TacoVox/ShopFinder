@@ -1,9 +1,22 @@
 import db.*;
+import java.io.File;
 
 
 public class throwawayMain {
 
 	public static void main(String[] args) {
+            try {
+                File folder = new File("temp/");
+            
+                if(folder.exists() == false)
+                {
+                    folder.mkdir();
+                }
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
 		SearchInterfaceBackend search = new SearchInterfaceBackend();
 		search.searchFrame.setVisible(true);
 		

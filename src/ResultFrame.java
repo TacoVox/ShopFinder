@@ -72,6 +72,7 @@ public class ResultFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+                                            
 					ResultFrame frame = new ResultFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -129,7 +130,7 @@ public class ResultFrame extends JFrame {
 				switchMap("driving");
 			}
 		});
-		driveBtn.setIcon(new ImageIcon(ResultFrame.class.getResource("/png/car80.png")));
+		driveBtn.setIcon(new ImageIcon("png/car80.png"));
 		driveBtn.setBounds(272, 11, 32, 32);
 		driveBtn.setEnabled(false);
 		leftPanel.add(driveBtn);
@@ -140,7 +141,7 @@ public class ResultFrame extends JFrame {
 				switchMap("bicycling");
 			}
 		});
-		bikeBtn.setIcon(new ImageIcon(ResultFrame.class.getResource("/png/riding.png")));
+		bikeBtn.setIcon(new ImageIcon("png/riding.png"));
 		bikeBtn.setBounds(240, 11, 32, 32);
 		bikeBtn.setEnabled(false);
 		leftPanel.add(bikeBtn);
@@ -151,7 +152,7 @@ public class ResultFrame extends JFrame {
 				switchMap("walking");
 			}
 		});
-		walkBtn.setIcon(new ImageIcon(ResultFrame.class.getResource("/png/traveler.png")));
+		walkBtn.setIcon(new ImageIcon("png/traveler.png"));
 		walkBtn.setBounds(208, 11, 32, 32);
 		walkBtn.setEnabled(false);
 		leftPanel.add(walkBtn);
@@ -163,7 +164,7 @@ public class ResultFrame extends JFrame {
 			}
 		});
 		mapBtn.setMargin(new Insets(0, 0, 0, 0));
-		mapBtn.setIcon(new ImageIcon(ResultFrame.class.getResource("/png/map30.png")));
+		mapBtn.setIcon(new ImageIcon("png/map30.png"));
 		mapBtn.setBounds(176, 11, 32, 32);
 		leftPanel.add(mapBtn);
 		//Map container
@@ -206,9 +207,12 @@ public class ResultFrame extends JFrame {
 		else {
 					BufferedImage img;
 					img = null;
-					try {
+					try
+                                        {
 						img = ImageIO.read(new File("temp/map.png"));
-					} catch (IOException e) {
+					}
+                                        catch (IOException e)
+                                        {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}

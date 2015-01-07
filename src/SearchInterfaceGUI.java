@@ -59,7 +59,7 @@ public class SearchInterfaceGUI {
 		searchFrame.getContentPane().add(backgroundFrame);
 		backgroundFrame.setVisible(true);
 		backgroundFrame.setClosable(false);
-		backgroundFrame.setContentPane(new JLabel(new ImageIcon(SearchInterfaceGUI.class.getResource("png/ShopFinderLogo.png"))));
+		backgroundFrame.setContentPane(new JLabel(new ImageIcon("png/ShopFinderLogo.png")));
 		((javax.swing.plaf.basic.BasicInternalFrameUI) backgroundFrame.getUI()).setNorthPane(null);
 
 		searchButton = new JButton("Search");

@@ -1,8 +1,10 @@
+package GUI.AdminChoices;
+
+import GUI.AdminManagement.AdminManagementBackend;
+import GUI.StoreChoices.StoreChoicesBackend;
+import GUI.AdminChoices.AdminChoicesGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import db.DBConnector;
-import db.Store;
 
 
 public class AdminChoicesBackend extends AdminChoicesGUI{
@@ -11,7 +13,7 @@ public class AdminChoicesBackend extends AdminChoicesGUI{
 		{
             public void actionPerformed(ActionEvent arg0) {
         		StoreChoicesBackend addGUI = new StoreChoicesBackend();
-        		addGUI.frame.setVisible(true);
+                        addGUI.getFrame().setVisible(true);
             }
 	});
 		
@@ -19,7 +21,7 @@ public class AdminChoicesBackend extends AdminChoicesGUI{
 		{
             public void actionPerformed(ActionEvent arg0) {
         		AdminManagementBackend manageGUI = new AdminManagementBackend();
-        		manageGUI.frame.setVisible(true);
+        		manageGUI.getFrame().setVisible(true);
             }
 	});
 	}

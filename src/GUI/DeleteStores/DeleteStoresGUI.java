@@ -1,3 +1,5 @@
+package GUI.DeleteStores;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -43,4 +45,9 @@ public class DeleteStoresGUI {
 		deleteBut.setBounds(285, 68, 89, 23);
 		deleteFrame.getContentPane().add(deleteBut);
 	}
+        
+        public JFrame getFrame()
+        {
+            return deleteFrame;
+        }
 }

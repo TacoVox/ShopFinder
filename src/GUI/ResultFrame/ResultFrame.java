@@ -1,3 +1,6 @@
+package GUI.ResultFrame;
+
+import GMaps.MapHandler;
 import java.awt.EventQueue;
 
 import javax.imageio.ImageIO;

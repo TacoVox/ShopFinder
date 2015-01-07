@@ -1,3 +1,8 @@
+package GUI.SearchInterface;
+
+import GUI.ResultFrame.ResultFrame;
+import GUI.LoginInterface.LoginInterfaceBackend;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,7 +26,7 @@ public class SearchInterfaceBackend extends SearchInterfaceGUI{
 		{
 			public void actionPerformed(ActionEvent arg0) {
 				LoginInterfaceBackend loginWindow = new LoginInterfaceBackend();
-				loginWindow.frame.setVisible(true);
+				loginWindow.getFrame().setVisible(true);
 			}
 		});
 

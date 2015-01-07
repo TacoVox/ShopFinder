@@ -1,3 +1,5 @@
+package GUI.SearchInterface;
+
 import java.awt.Font;
 
 import javax.swing.DefaultListModel;
@@ -82,5 +84,10 @@ public class SearchInterfaceGUI {
 
 		connector.closeConnection();
 	}
+        
+        public JFrame getFrame()
+        {
+            return searchFrame;
+        }
 
 }

@@ -1,3 +1,5 @@
+package GUI.AdminManagement;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -120,4 +122,9 @@ public class AdminManagementGUI {
 		deleteAdminButt.setBounds(471, 195, 136, 26);
 		frame.getContentPane().add(deleteAdminButt);
 	}
+        
+        public JFrame getFrame()
+        {
+            return frame;
+        }
 }

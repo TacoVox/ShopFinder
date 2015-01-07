@@ -1,14 +1,14 @@
+package GUI.AddStores;
+
+import GUI.AddStores.AddStoresGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
-import db.Categories;
 import db.DBConnector;
 import db.Store;
-
 
 public class AddStoresBackend extends AddStoresGUI{
 	public AddStoresBackend(){

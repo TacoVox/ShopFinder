@@ -1,12 +1,10 @@
+package GUI.LoginInterface;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
-
-import java.awt.BorderLayout;
-
-import javax.swing.BoxLayout;
 
 import java.awt.Font;
 
@@ -57,4 +55,9 @@ public class LoginInterfaceGUI {
 		adminLabel.setBounds(126, 9, 145, 40);
 		frame.getContentPane().add(adminLabel);
 	}
+        
+        public JFrame getFrame()
+        {
+            return frame;
+        }
 }

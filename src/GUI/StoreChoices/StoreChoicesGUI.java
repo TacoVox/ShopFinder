@@ -1,3 +1,5 @@
+package GUI.StoreChoices;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -35,4 +37,9 @@ public class StoreChoicesGUI {
 		label.setBounds(10, 11, 208, 48);
 		frame.getContentPane().add(label);
 	}
+        
+        public JFrame getFrame()
+        {
+            return frame;
+        }
 }

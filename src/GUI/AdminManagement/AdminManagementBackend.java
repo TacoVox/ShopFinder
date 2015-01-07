@@ -1,3 +1,6 @@
+package GUI.AdminManagement;
+
+import GUI.AdminManagement.AdminManagementGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

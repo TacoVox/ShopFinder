@@ -1,3 +1,5 @@
+package GUI.AdminChoices;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -34,4 +36,9 @@ public class AdminChoicesGUI {
 		storeBut.setBounds(222, 56, 200, 50);
 		adminChoicesFrame.getContentPane().add(storeBut);
 	}
+        
+        public JFrame getFrame()
+        {
+            return adminChoicesFrame;
+        }
 }

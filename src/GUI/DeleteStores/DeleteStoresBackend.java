@@ -1,3 +1,6 @@
+package GUI.DeleteStores;
+
+import GUI.DeleteStores.DeleteStoresGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

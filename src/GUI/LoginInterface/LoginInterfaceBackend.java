@@ -1,3 +1,7 @@
+package GUI.LoginInterface;
+
+import GUI.AdminChoices.AdminChoicesBackend;
+import GUI.LoginInterface.LoginInterfaceGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,7 +26,7 @@ public class LoginInterfaceBackend extends LoginInterfaceGUI{
         		
         		if(admin.loginAdmin(username, password)){
         			AdminChoicesBackend adminChoices = new AdminChoicesBackend();
-        			adminChoices.adminChoicesFrame.setVisible(true);
+        			adminChoices.getFrame().setVisible(true);
         		}
         		
         		else{

@@ -1,3 +1,5 @@
+package GUI.AddStores;
+
 import java.awt.EventQueue;
 
 import javax.swing.DefaultListModel;
@@ -130,4 +132,9 @@ public class AddStoresGUI {
 		addUpdateBut.setBounds(265, 336, 118, 23);
 		frame.getContentPane().add(addUpdateBut);
 	}
+        
+        public JFrame getFrame()
+        {
+            return frame;
+        }
 }

@@ -1,3 +1,8 @@
+package GUI.StoreInterface;
+
+import GUI.DeleteStores.DeleteStoresBackend;
+import GUI.AddStores.AddStoresBackend;
+import GUI.StoreInterface.StoreInterfaceGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +15,7 @@ public class StoreInterfaceBackend extends StoreInterfaceGUI{
 		{
             public void actionPerformed(ActionEvent arg0) {
             	DeleteStoresBackend deleteStores = new DeleteStoresBackend();
-            	deleteStores.deleteFrame.setVisible(true);
+            	deleteStores.getFrame().setVisible(true);
             }
 		});
 		
@@ -19,7 +24,7 @@ public class StoreInterfaceBackend extends StoreInterfaceGUI{
 		{
             public void actionPerformed(ActionEvent arg0) {
             	AddStoresBackend addStores = new AddStoresBackend();
-            	addStores.frame.setVisible(true);
+            	addStores.getFrame().setVisible(true);
             }
 		});
 	}

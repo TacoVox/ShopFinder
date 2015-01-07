@@ -48,5 +48,5 @@ Temporary Items
 /bin/
 /temp/
 /nbproject/
-.xml
+*.xml
 /dist/

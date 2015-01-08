@@ -20,7 +20,7 @@ import org.json.*;
  */
 public class MapHandler {
 	static final String API_KEY = "AIzaSyBByaoqrcWI3mr24GHmSCBZ_dRiIuezwiI";
-	static final String GEO_URL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+	static final String GEO_URL = "https://maps.googleapis.com/maps/api/geocode/json?region=SE&address=";
 	static final String MAPS_URL = "https://maps.googleapis.com/maps/api/staticmap?";
 	static final String DIRECTIONS_URL = "https://maps.googleapis.com/maps/api/directions/json?";
 	static final String IMG_FORMAT = "png";

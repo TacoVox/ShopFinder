@@ -19,6 +19,7 @@ public class SearchInterfaceGUI {
 	JButton searchButton;
 	JList<String> categoryList;
 	DefaultListModel<String> categoryModel;
+	JTextField streetField;
 
 	public SearchInterfaceGUI() {
 		DBConnector connector = new DBConnector();
@@ -38,6 +39,7 @@ public class SearchInterfaceGUI {
 		searchFrame.getContentPane().add(zipCodeLabel);
 
 		zipCodeInput = new JTextField();
+		zipCodeInput.setToolTipText("This field MUST be filled.");
 		zipCodeInput.setBounds(117, 292, 200, 27);
 		searchFrame.getContentPane().add(zipCodeInput);
 		zipCodeInput.setColumns(10);
@@ -75,6 +77,16 @@ public class SearchInterfaceGUI {
 
 		categoryList = new JList<String>(categoryModel);
 		categoryPane.setViewportView(categoryList);
+		
+		JLabel addressLabel = new JLabel("Input Street:");
+		addressLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		addressLabel.setBounds(10, 236, 108, 50);
+		searchFrame.getContentPane().add(addressLabel);
+		
+		streetField = new JTextField();
+		streetField.setColumns(10);
+		streetField.setBounds(117, 246, 200, 27);
+		searchFrame.getContentPane().add(streetField);
 
 		for(String[] cat : category.getCategories()){
 			categoryModel.addElement(cat[1]);
@@ -82,5 +94,4 @@ public class SearchInterfaceGUI {
 
 		connector.closeConnection();
 	}
-
 }

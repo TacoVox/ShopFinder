@@ -32,6 +32,7 @@ public class SearchInterfaceBackend extends SearchInterfaceGUI{
 				//List<String[]> returnedStores = null;
 				try{
 					int userZip = Integer.parseInt(zipCodeInput.getText());
+					String street = streetField.getText();
 					System.out.println(userZip);
 
 					for(int i = 0; i < selectedCategories.length; i++){
@@ -46,7 +47,11 @@ public class SearchInterfaceBackend extends SearchInterfaceGUI{
 
 					ResultFrame rf = new ResultFrame();
 					rf.setVisible(true);
-					rf.loadData(Integer.toString(userZip), returnStores);
+//					rf.loadData(Integer.toString(userZip), returnStores);
+					if(street.length() > 0){
+						rf.loadData(street, Integer.toString(userZip), returnStores);
+					}
+					else rf.loadData(Integer.toString(userZip), returnStores);
 
 				} catch (NumberFormatException exception) {
 					JFrame popup = new JFrame();

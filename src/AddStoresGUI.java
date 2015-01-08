@@ -53,7 +53,6 @@ public class AddStoresGUI {
 		categoryPane.setBounds(10, 89, 305, 58);
 		categoryList = new JList<String>(categoryModel);
 		categoryPane.setViewportView(categoryList);
-		categoryModel = new DefaultListModel<String>();
 		frame.getContentPane().add(categoryPane);
 		
 		// Set selection method of the category list
